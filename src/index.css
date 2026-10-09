@@ -1,0 +1,304 @@
+@import 'tailwindcss';
+
+/* ───────── BOSS VISION — дизайн-система ─────────
+   Все цвета — семантические токены (bg, surface, ink, accent…).
+   Тема = набор значений токенов: [data-theme] × [data-mode].
+   Поэтому смена дизайна (золото / чёрный / синий, день / ночь) не трогает код экранов. */
+
+@custom-variant dark (&:where([data-mode='dark'], [data-mode='dark'] *));
+
+@theme inline {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-accent: var(--c-accent);
+  --color-on-accent: var(--c-on-accent);
+  --color-brand: var(--c-brand);
+  --color-brand-soft: var(--c-brand-soft);
+  --color-gold: var(--c-gold);
+  --color-success: var(--c-success);
+  --color-success-soft: var(--c-success-soft);
+  --color-danger: var(--c-danger);
+  --color-danger-soft: var(--c-danger-soft);
+  --color-warn: var(--c-warn);
+  --color-warn-soft: var(--c-warn-soft);
+  --color-info: var(--c-info);
+  --color-info-soft: var(--c-info-soft);
+  --color-hero: var(--c-hero);
+  --color-on-hero: var(--c-on-hero);
+}
+
+/* Classic — бежевый люкс по макету (по умолчанию) */
+:root,
+[data-theme='classic'][data-mode='light'] {
+  --c-bg: #f4eee5;
+  --c-surface: #fffcf7;
+  --c-surface-2: #efe6d9;
+  --c-ink: #1e1a16;
+  --c-muted: #8b7f71;
+  --c-line: #e5d9c8;
+  --c-accent: #2a241f;
+  --c-on-accent: #faf5ec;
+  --c-brand: #8a6a4d;
+  --c-brand-soft: #efe2d2;
+  --c-gold: #b08d57;
+  --c-success: #3f7d5a;
+  --c-success-soft: #e3efe6;
+  --c-danger: #b4483c;
+  --c-danger-soft: #f6e2de;
+  --c-warn: #a87720;
+  --c-warn-soft: #f6ead2;
+  --c-info: #4d6b8a;
+  --c-info-soft: #e2e9f1;
+  --c-hero: #2a241f;
+  --c-on-hero: #f6efe4;
+}
+[data-theme='classic'][data-mode='dark'] {
+  --c-bg: #12100e;
+  --c-surface: #1b1815;
+  --c-surface-2: #25211c;
+  --c-ink: #f3ece1;
+  --c-muted: #a39786;
+  --c-line: #332d26;
+  --c-accent: #d1b186;
+  --c-on-accent: #17130f;
+  --c-brand: #d1b186;
+  --c-brand-soft: #2e271f;
+  --c-gold: #d1b186;
+  --c-success: #7fbf97;
+  --c-success-soft: #1d2a22;
+  --c-danger: #e08a7e;
+  --c-danger-soft: #331f1c;
+  --c-warn: #e2b866;
+  --c-warn-soft: #30281a;
+  --c-info: #95b3d1;
+  --c-info-soft: #1c242d;
+  --c-hero: #241f1a;
+  --c-on-hero: #f6efe4;
+}
+
+/* Gold — чёрное золото */
+[data-theme='gold'][data-mode='light'] {
+  --c-bg: #f7f3ea;
+  --c-surface: #ffffff;
+  --c-surface-2: #f1e9d6;
+  --c-ink: #17140e;
+  --c-muted: #857a62;
+  --c-line: #e8dcc0;
+  --c-accent: #b8913f;
+  --c-on-accent: #ffffff;
+  --c-brand: #9c7a2e;
+  --c-brand-soft: #f3e7c8;
+  --c-gold: #c9a24d;
+  --c-success: #3f7d5a;
+  --c-success-soft: #e3efe6;
+  --c-danger: #b4483c;
+  --c-danger-soft: #f6e2de;
+  --c-warn: #a87720;
+  --c-warn-soft: #f6ead2;
+  --c-info: #4d6b8a;
+  --c-info-soft: #e2e9f1;
+  --c-hero: #15120c;
+  --c-on-hero: #f4e4bd;
+}
+[data-theme='gold'][data-mode='dark'] {
+  --c-bg: #0b0a08;
+  --c-surface: #15130f;
+  --c-surface-2: #1f1b14;
+  --c-ink: #f4ead2;
+  --c-muted: #a69a7b;
+  --c-line: #2f291d;
+  --c-accent: #d4ad5a;
+  --c-on-accent: #120f08;
+  --c-brand: #e1bd6c;
+  --c-brand-soft: #2a2213;
+  --c-gold: #e1bd6c;
+  --c-success: #86c39c;
+  --c-success-soft: #1a2820;
+  --c-danger: #e58b7e;
+  --c-danger-soft: #321d1a;
+  --c-warn: #e8bf68;
+  --c-warn-soft: #2f2716;
+  --c-info: #9ab8d6;
+  --c-info-soft: #1b232c;
+  --c-hero: #1a160e;
+  --c-on-hero: #f4e4bd;
+}
+
+/* Noir — чёрно-белый минимализм */
+[data-theme='noir'][data-mode='light'] {
+  --c-bg: #f4f4f2;
+  --c-surface: #ffffff;
+  --c-surface-2: #ecebe8;
+  --c-ink: #0d0d0d;
+  --c-muted: #7a7a76;
+  --c-line: #e2e1dd;
+  --c-accent: #0d0d0d;
+  --c-on-accent: #ffffff;
+  --c-brand: #0d0d0d;
+  --c-brand-soft: #ebebe8;
+  --c-gold: #a8895a;
+  --c-success: #2f7a52;
+  --c-success-soft: #e2efe7;
+  --c-danger: #b23b30;
+  --c-danger-soft: #f5e0dd;
+  --c-warn: #9d7120;
+  --c-warn-soft: #f4ead6;
+  --c-info: #44627f;
+  --c-info-soft: #e1e8ef;
+  --c-hero: #0d0d0d;
+  --c-on-hero: #ffffff;
+}
+[data-theme='noir'][data-mode='dark'] {
+  --c-bg: #000000;
+  --c-surface: #0f0f0f;
+  --c-surface-2: #1a1a1a;
+  --c-ink: #f5f5f3;
+  --c-muted: #8f8f8a;
+  --c-line: #262626;
+  --c-accent: #f5f5f3;
+  --c-on-accent: #000000;
+  --c-brand: #f5f5f3;
+  --c-brand-soft: #1f1f1f;
+  --c-gold: #c7a774;
+  --c-success: #7cc496;
+  --c-success-soft: #14231a;
+  --c-danger: #ec8c80;
+  --c-danger-soft: #2c1714;
+  --c-warn: #e7bf6c;
+  --c-warn-soft: #2a2212;
+  --c-info: #9cbbd8;
+  --c-info-soft: #161e26;
+  --c-hero: #111111;
+  --c-on-hero: #ffffff;
+}
+
+/* Royal — глубокий синий + белый */
+[data-theme='royal'][data-mode='light'] {
+  --c-bg: #f2f5fa;
+  --c-surface: #ffffff;
+  --c-surface-2: #e8eef7;
+  --c-ink: #0c1830;
+  --c-muted: #6b7a93;
+  --c-line: #dbe3ef;
+  --c-accent: #12306b;
+  --c-on-accent: #ffffff;
+  --c-brand: #1d4ba3;
+  --c-brand-soft: #e2eafa;
+  --c-gold: #c2a063;
+  --c-success: #2f7a5a;
+  --c-success-soft: #e1f0e9;
+  --c-danger: #b6413a;
+  --c-danger-soft: #f6e1df;
+  --c-warn: #9c7426;
+  --c-warn-soft: #f4ebd7;
+  --c-info: #1d4ba3;
+  --c-info-soft: #e2eafa;
+  --c-hero: #0d2150;
+  --c-on-hero: #f1f5ff;
+}
+[data-theme='royal'][data-mode='dark'] {
+  --c-bg: #060b16;
+  --c-surface: #0d1526;
+  --c-surface-2: #142036;
+  --c-ink: #e9effa;
+  --c-muted: #8d9bb4;
+  --c-line: #1d2a42;
+  --c-accent: #d3b47a;
+  --c-on-accent: #0a1222;
+  --c-brand: #7fa4ec;
+  --c-brand-soft: #16233d;
+  --c-gold: #d3b47a;
+  --c-success: #7cc4a0;
+  --c-success-soft: #12241d;
+  --c-danger: #ec8d85;
+  --c-danger-soft: #2b1616;
+  --c-warn: #e6c072;
+  --c-warn-soft: #2a2314;
+  --c-info: #7fa4ec;
+  --c-info-soft: #16233d;
+  --c-hero: #0b1a3c;
+  --c-on-hero: #f1f5ff;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* тонкая «дорогая» текстура для героев */
+.lux-grain {
+  background-image:
+    radial-gradient(120% 80% at 100% 0%, color-mix(in oklab, var(--c-gold) 28%, transparent) 0%, transparent 55%),
+    radial-gradient(90% 60% at 0% 100%, color-mix(in oklab, var(--c-brand) 22%, transparent) 0%, transparent 60%);
+}
+.lux-line {
+  background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+  height: 1px;
+}
+.shimmer {
+  background: linear-gradient(110deg, var(--c-gold) 20%, color-mix(in oklab, var(--c-gold) 40%, white) 40%, var(--c-gold) 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* печать резюме и сертификата в PDF */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .print-area {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}

@@ -1,0 +1,196 @@
+<title>BOSS VISION Design Variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<style>
+/* Layout: showroom — page chrome follows the viewer's theme; each phone carries its own variant palette (day/night) */
+:root{
+  --bg:#f3efe8; --fg:#1b1814; --muted:#7d7366; --line:#e2d9cb; --panel:#fbf8f3; --accent:#a8823d;
+  --display:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0d0b;--fg:#f1eadf;--muted:#a0968a;--line:#2b2620;--panel:#171411;--accent:#d4ad5a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f0d0b;--fg:#f1eadf;--muted:#a0968a;--line:#2b2620;--panel:#171411;--accent:#d4ad5a;color-scheme:dark}
+
+/* палитры вариантов — те же значения, что в приложении (Настройки → Оформление) */
+.ph[data-v="gold"][data-m="day"]{--b:#f7f3ea;--s:#ffffff;--s2:#f1e9d6;--i:#17140e;--m:#857a62;--l:#e8dcc0;--a:#b8913f;--oa:#ffffff;--g:#c9a24d;--h:#15120c;--oh:#f4e4bd;--ok:#3f7d5a;--oks:#e3efe6}
+.ph[data-v="gold"][data-m="night"]{--b:#0b0a08;--s:#15130f;--s2:#1f1b14;--i:#f4ead2;--m:#a69a7b;--l:#2f291d;--a:#d4ad5a;--oa:#120f08;--g:#e1bd6c;--h:#1a160e;--oh:#f4e4bd;--ok:#86c39c;--oks:#1a2820}
+.ph[data-v="noir"][data-m="day"]{--b:#f4f4f2;--s:#ffffff;--s2:#ecebe8;--i:#0d0d0d;--m:#7a7a76;--l:#e2e1dd;--a:#0d0d0d;--oa:#ffffff;--g:#a8895a;--h:#0d0d0d;--oh:#ffffff;--ok:#2f7a52;--oks:#e2efe7}
+.ph[data-v="noir"][data-m="night"]{--b:#000000;--s:#0f0f0f;--s2:#1a1a1a;--i:#f5f5f3;--m:#8f8f8a;--l:#262626;--a:#f5f5f3;--oa:#000000;--g:#c7a774;--h:#111111;--oh:#ffffff;--ok:#7cc496;--oks:#14231a}
+.ph[data-v="royal"][data-m="day"]{--b:#f2f5fa;--s:#ffffff;--s2:#e8eef7;--i:#0c1830;--m:#6b7a93;--l:#dbe3ef;--a:#12306b;--oa:#ffffff;--g:#c2a063;--h:#0d2150;--oh:#f1f5ff;--ok:#2f7a5a;--oks:#e1f0e9}
+.ph[data-v="royal"][data-m="night"]{--b:#060b16;--s:#0d1526;--s2:#142036;--i:#e9effa;--m:#8d9bb4;--l:#1d2a42;--a:#d3b47a;--oa:#0a1222;--g:#d3b47a;--h:#0b1a3c;--oh:#f1f5ff;--ok:#7cc4a0;--oks:#12241d}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:20px}
+.brand{font-family:var(--display);font-weight:700;font-size:clamp(30px,5vw,52px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+.brand small{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.24em;color:var(--muted);margin-top:10px;text-transform:uppercase}
+.lede{max-width:46ch;color:var(--muted);margin:0}
+
+.pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+.vbtn{all:unset;cursor:pointer;display:flex;gap:14px;align-items:center;padding:14px 16px;border:1.5px solid var(--line);border-radius:20px;background:var(--panel);transition:border-color .2s,transform .2s}
+.vbtn:hover{transform:translateY(-2px)}
+.vbtn[aria-pressed="true"]{border-color:var(--accent)}
+.vbtn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sw{display:flex;flex-shrink:0}.sw i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(128,128,128,.25);margin-left:-6px}.sw i:first-child{margin-left:0}
+.vname{font-family:var(--display);font-size:20px;font-weight:600;line-height:1.1}
+.vdesc{font-size:12.5px;color:var(--muted)}
+
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
+.seg button{all:unset;cursor:pointer;padding:7px 16px;border-radius:999px;font-weight:600;font-size:13px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--accent)}
+.clock{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.stage{margin-top:22px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch}
+.row{display:flex;gap:22px;width:max-content;padding:6px 2px}
+.row.compare .ph{transform:scale(.96)}
+.cap{font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-weight:600}
+
+/* телефон */
+.ph{width:258px;height:540px;border-radius:40px;padding:9px;background:#111;box-shadow:0 30px 60px -30px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06) inset;flex-shrink:0;transition:transform .4s}
+.scr{height:100%;border-radius:32px;overflow:hidden;background:var(--b);color:var(--i);position:relative;font-size:11px;transition:background .5s,color .5s}
+.status{display:flex;justify-content:space-between;padding:9px 18px 4px;font-size:10px;font-weight:700}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:20px;background:#111}
+.pad{padding:6px 14px}
+.dsp{font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+.card{background:var(--s);border:1px solid var(--l);border-radius:16px;padding:10px}
+.muted{color:var(--m)}
+.hero{background:var(--h);color:var(--oh);border-radius:18px;padding:12px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0%,color-mix(in oklab,var(--g) 32%,transparent),transparent 60%);pointer-events:none}
+.btn{display:block;text-align:center;background:var(--a);color:var(--oa);border-radius:12px;padding:8px;font-weight:700;font-size:11px}
+.btn.gold{background:var(--g);color:#fff}
+.chip{display:inline-block;padding:2px 8px;border-radius:99px;background:var(--s2);color:var(--m);font-weight:700;font-size:9px}
+.chip.ok{background:var(--oks);color:var(--ok)}
+.chip.on{background:var(--a);color:var(--oa)}
+.tabbar{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,1fr);background:var(--s);border-top:1px solid var(--l);padding:7px 0 12px;font-size:8.5px;font-weight:700;color:var(--m);text-align:center}
+.tabbar span.on{color:var(--i)}
+.tabbar b{display:block;width:16px;height:16px;margin:0 auto 3px;border-radius:5px;border:1.6px solid currentColor}
+.ring{width:46px;height:46px;flex-shrink:0}
+.shim{background:linear-gradient(110deg,var(--g) 20%,color-mix(in oklab,var(--g) 35%,white) 40%,var(--g) 60%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.bars span{display:block;height:4px;border-radius:4px;background:var(--s2);overflow:hidden;margin-top:3px}
+.bars span i{display:block;height:100%;background:var(--g)}
+.g{display:grid;gap:7px}
+.flex{display:flex;align-items:center;gap:8px}
+.av{width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;flex-shrink:0}
+.logo{width:30px;height:30px;border-radius:10px;background:var(--h);color:var(--oh);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;flex-shrink:0}
+
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
+.note{border-top:2px solid var(--line);padding-top:14px}
+.note.on{border-color:var(--accent)}
+.note h3{font-family:var(--display);font-size:22px;margin:0 0 6px;text-wrap:balance}
+.note p{margin:0 0 8px;color:var(--muted);font-size:14px;max-width:60ch}
+.note ul{margin:0;padding-left:18px;font-size:14px}
+.foot{margin-top:34px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13.5px;max-width:70ch}
+
+@media (max-width:760px){.pick,.notes{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Boss Vision<small>Три варианта дизайна · день и ночь</small></div>
+    <p class="lede">Выберите стиль — посмотрите главные экраны в дневном и ночном режиме. Все три уже встроены в приложение: Настройки → Оформление.</p>
+  </header>
+
+  <div class="pick" role="group" aria-label="Вариант дизайна">
+    <button class="vbtn" data-pick="gold" aria-pressed="true">
+      <span class="sw"><i style="background:#0b0a08"></i><i style="background:#d4ad5a"></i><i style="background:#f7f3ea"></i></span>
+      <span><span class="vname">Gold</span><br><span class="vdesc">Чёрное золото — премиум, вечерний люкс</span></span>
+    </button>
+    <button class="vbtn" data-pick="noir" aria-pressed="false">
+      <span class="sw"><i style="background:#000"></i><i style="background:#fff"></i><i style="background:#c7a774"></i></span>
+      <span><span class="vname">Noir</span><br><span class="vdesc">Чёрно-белый минимализм, как модный дом</span></span>
+    </button>
+    <button class="vbtn" data-pick="royal" aria-pressed="false">
+      <span class="sw"><i style="background:#0d2150"></i><i style="background:#fff"></i><i style="background:#d3b47a"></i></span>
+      <span><span class="vname">Royal</span><br><span class="vdesc">Глубокий синий и белый — деловой, банковский</span></span>
+    </button>
+  </div>
+
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Режим">
+      <button data-mode="day" aria-pressed="true">☀ День</button>
+      <button data-mode="night" aria-pressed="false">☾ Ночь</button>
+      <button data-mode="auto" aria-pressed="false">Авто по времени</button>
+      <button data-mode="compare" aria-pressed="false">День | Ночь</button>
+    </div>
+    <span class="clock" id="clock"></span>
+  </div>
+
+  <div class="stage"><div class="row" id="row"></div></div>
+
+  <div class="notes">
+    <div class="note" data-note="gold"><h3>Gold</h3><p>Самый «богатый»: чёрный фон ночью, золотые кнопки, слоновая кость днём. Хорош для премиум-продуктов — подбор под ключ, Academy, сертификаты.</p><ul><li>Ночью — главный режим</li><li>Золото на кнопках и прогрессе</li></ul></div>
+    <div class="note" data-note="noir"><h3>Noir</h3><p>Строгий и современный: чистый чёрный и белый, золото только в деталях. Читается легче всего, выглядит как бренд одежды.</p><ul><li>Максимальная читаемость</li><li>Акцент — только Match и сертификаты</li></ul></div>
+    <div class="note" data-note="royal"><h3>Royal</h3><p>Деловой синий с белым днём и тёмно-синий с золотом ночью. Вызывает доверие у предпринимателей, как банковское приложение.</p><ul><li>Сильнее для работодателей</li><li>Золотые кнопки ночью</li></ul></div>
+  </div>
+
+  <p class="foot">Сейчас в приложении по умолчанию стоит четвёртый вариант — Classic (бежевый люкс по вашему макету). Напишите, какой оставить по умолчанию: Classic, Gold, Noir или Royal — и нужен ли «Авто» (днём светлая тема, с 20:00 до 7:00 — тёмная).</p>
+</div>
+
+<script>
+const screens = [
+  { cap: 'Главная кандидата', tab: 0, html: `
+    <div class="pad g">
+      <div class="flex"><div class="av">АС</div><div><div class="dsp" style="font-size:15px">Привет, Алина! 👋</div><div class="muted" style="font-size:9px">Продолжай развиваться</div></div></div>
+      <div class="card flex" style="padding:7px 10px"><span class="muted">⌕ Поиск вакансий, курсов…</span></div>
+      <div class="card flex"><svg class="ring" viewBox="0 0 46 46"><circle cx="23" cy="23" r="19" fill="none" stroke="var(--s2)" stroke-width="5"/><circle cx="23" cy="23" r="19" fill="none" stroke="var(--g)" stroke-width="5" stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="12" transform="rotate(-90 23 23)"/><text x="23" y="27" text-anchor="middle" font-size="11" font-weight="700" fill="var(--i)" font-family="Playfair Display,Georgia,serif">90%</text></svg><div><b>Профиль заполнен на 90%</b><div class="muted" style="font-size:9px">Добавьте фото</div></div></div>
+      <div class="hero"><div style="font-size:8px;letter-spacing:.18em;opacity:.7">ВАШ КАРЬЕРНЫЙ MATCH</div><div class="dsp" style="font-size:22px;margin:2px 0" ><span class="shim">85%</span></div><div class="dsp" style="font-size:14px">Бизнес-ассистент</div><div style="margin-top:8px;width:60%" class="btn gold">✦ AI Career Profile</div></div>
+      <div class="card"><div class="flex"><div class="logo">V</div><div style="flex:1"><b>Бизнес-ассистент</b><div class="muted" style="font-size:9px">ТОО Vision Group</div></div><span class="chip ok">92% match</span></div><div class="muted" style="font-size:9px;margin-top:6px">Алматы · Гибрид · 300 000 – 500 000 ₸</div></div>
+    </div>` },
+  { cap: 'Карточка вакансии', tab: 1, html: `
+    <div class="pad g">
+      <div class="muted" style="font-size:9px">← Детали вакансии</div>
+      <div class="card"><div class="flex"><div class="logo" style="width:38px;height:38px">V</div><div><span class="chip">Business Assistant</span><div class="dsp" style="font-size:16px;margin-top:3px">Бизнес-ассистент</div><div class="muted" style="font-size:9px">ТОО Vision Group</div></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px;font-size:9px"><div><span class="muted">Город</span><br><b>Алматы</b></div><div><span class="muted">Зарплата</span><br><b>300–500 тыс ₸</b></div><div><span class="muted">Формат</span><br><b>Гибрид</b></div><div><span class="muted">Опыт</span><br><b>1–3 года</b></div></div></div>
+      <div class="card"><div class="flex" style="justify-content:space-between"><b class="dsp" style="font-size:13px">AI Match</b><b class="dsp" style="font-size:20px;color:var(--ok)">92%</b></div>
+      <div class="bars" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:4px;font-size:8px">${[['Skills',95],['Experience',90],['Salary',100],['Location',100],['Format',100],['Personality',85]].map(([k,v])=>`<div><span class="muted" style="height:auto;background:none">${k} ${v}%</span><span><i style="width:${v}%"></i></span></div>`).join('')}</div>
+      <div style="color:var(--ok);font-size:9px;margin-top:7px">✓ Canva ✓ 2 года ✓ Алматы ✓ зарплата</div></div>
+      <div class="btn">Откликнуться</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="card" style="text-align:center;padding:7px;font-weight:700">♡ Сохранить</div><div class="card" style="text-align:center;padding:7px;font-weight:700">✦ Письмо AI</div></div>
+    </div>` },
+  { cap: 'Academy · курс', tab: 2, html: `
+    <div class="pad g">
+      <div><div class="dsp" style="font-size:18px;text-transform:uppercase">Boss Vision</div><div style="letter-spacing:.3em;font-size:9px;color:var(--g);font-weight:700">ACADEMY</div></div>
+      <div class="flex" style="gap:5px"><span class="chip on">Все курсы</span><span class="chip">Мой прогресс</span><span class="chip">Сертификаты</span></div>
+      <div class="hero" style="padding:14px"><div style="font-size:8px;opacity:.7;letter-spacing:.2em">MINI BOSS ACADEMY</div><div class="dsp" style="font-size:17px;margin-top:3px">Бизнес-ассистент</div><div style="font-size:9px;opacity:.75">10 модулей · 30 уроков · сертификат</div><div style="height:4px;background:rgba(255,255,255,.2);border-radius:4px;margin:9px 0 3px"><div style="width:73%;height:100%;background:var(--g);border-radius:4px"></div></div><div style="font-size:9px">73% · 7 / 10 модулей</div><div class="btn gold" style="margin-top:8px;width:55%">▶ Продолжить</div></div>
+      ${[['Основы профессии','🟢 завершён','ok'],['Коммуникация','🟢 завершён','ok'],['AI-инструменты','🟡 в процессе',''],['Финансы','🔒 закрыт','']].map(([t,s,c],i)=>`<div class="card flex" style="padding:8px"><span class="av" style="width:22px;height:22px;font-size:9px;background:${c?'var(--ok)':'var(--s2)'};color:${c?'#fff':'var(--m)'}">${i+1}</span><div style="flex:1"><b>${t}</b><div class="muted" style="font-size:8.5px">${s}</div></div></div>`).join('')}
+    </div>` },
+  { cap: 'AI-подбор кандидатов', tab: 2, emp: true, html: `
+    <div class="pad g">
+      <div class="dsp" style="font-size:16px">AI-подбор</div>
+      <div class="hero"><div style="font-size:9px;opacity:.8">«Бизнес-ассистент, Алматы, до 250 000 ₸, Canva, календарь»</div><div class="btn gold" style="margin-top:8px">✦ Запустить подбор</div></div>
+      <div class="dsp" style="font-size:12px">TOP 10 CANDIDATES</div>
+      ${[['АК','Алина К.','94'],['МК','Мадина К.','88'],['ЕК','Ерлан К.','81']].map(([a,n,s],i)=>`<div class="card"><div class="flex"><div class="av" style="${i?'background:var(--s2);color:var(--i)':''}">${a}</div><div style="flex:1"><b>${n}</b><div class="muted" style="font-size:8.5px">Бизнес-ассистент · MBTI ${['ENTJ','ISFJ','ISTJ'][i]}</div></div><b class="dsp" style="font-size:16px;color:var(--ok)">${s}%</b></div>${i===0?'<div style="font-size:8.5px;margin-top:6px;color:var(--ok)">✓ Canva ✓ 2 года ✓ Алматы</div><div style="font-size:8.5px;color:var(--m)">⚠ мало опыта в CRM</div>':''}</div>`).join('')}
+    </div>` },
+];
+const tabs = (i, emp) => (emp ? ['Главная','Вакансии','Кандидаты','Чаты','Профиль'] : ['Главная','Вакансии','Academy','Чаты','Профиль']).map((t,k)=>`<span class="${k===i?'on':''}"><b></b>${t}</span>`).join('');
+
+let v = 'gold', mode = 'day';
+try { const s = JSON.parse(localStorage.getItem('bv-variants') || '{}'); if (s.v) v = s.v; if (s.mode) mode = s.mode; } catch (e) {}
+
+const autoMode = () => { const h = new Date().getHours(); return h >= 7 && h < 20 ? 'day' : 'night'; };
+function phone(s, m) {
+  return `<div><div class="ph" data-v="${v}" data-m="${m}"><div class="scr"><div class="notch"></div><div class="status"><span>9:41</span><span>●●● ▮</span></div>${s.html}<div class="tabbar">${tabs(s.tab, s.emp)}</div></div></div><div class="cap">${s.cap}${mode==='compare' ? ' · ' + (m==='day'?'день':'ночь') : ''}</div></div>`;
+}
+function render() {
+  const row = document.getElementById('row');
+  row.className = 'row' + (mode === 'compare' ? ' compare' : '');
+  if (mode === 'compare') row.innerHTML = screens.slice(0, 2).flatMap((s) => [phone(s, 'day'), phone(s, 'night')]).join('');
+  else row.innerHTML = screens.map((s) => phone(s, mode === 'auto' ? autoMode() : mode)).join('');
+  document.querySelectorAll('[data-pick]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.pick === v)));
+  document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+  document.querySelectorAll('[data-note]').forEach((n) => n.classList.toggle('on', n.dataset.note === v));
+  const now = new Date();
+  document.getElementById('clock').textContent = `Сейчас ${now.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})} — авто включил бы ${autoMode()==='day'?'дневной':'ночной'} режим`;
+  try { localStorage.setItem('bv-variants', JSON.stringify({ v, mode })); } catch (e) {}
+}
+document.querySelectorAll('[data-pick]').forEach((b) => b.addEventListener('click', () => { v = b.dataset.pick; render(); }));
+document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { mode = b.dataset.mode; render(); }));
+render();
+setInterval(render, 60000);
+</script>
