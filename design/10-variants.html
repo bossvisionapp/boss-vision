@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>BOSS VISION — 10 вариантов дизайна</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800&family=Prata&family=Golos+Text:wght@400;500;600;700&family=Spectral:wght@500;600;700&family=Commissioner:wght@400;500;600;700&family=Unbounded:wght@500;600;700&family=Onest:wght@400;500;600;700&family=Geologica:wght@400;500;600;700&family=Cormorant:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600;700&family=Tenor+Sans&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Документ для печати в PDF: A3 альбомный, одна страница = один вариант */
+@page { size: 420mm 252mm; margin: 0 }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact }
+html, body { margin: 0; background: #e9e6e1; font-family: 'Manrope', system-ui, sans-serif; color: #1c1a17 }
+.page { width: 420mm; height: 252mm; overflow: hidden; position: relative; page-break-after: always; break-after: page; padding: 16mm 18mm; display: flex; flex-direction: column; gap: 9mm }
+.page:last-child { page-break-after: auto }
+
+/* ── обложка ── */
+.cover { background: #14110e; color: #f3eadb; justify-content: space-between }
+.cover h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 92px; line-height: .95; margin: 0; letter-spacing: -.02em; text-transform: uppercase }
+.cover .kicker { font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: #c9a86a }
+.cover p { max-width: 760px; font-size: 19px; line-height: 1.6; color: #cfc4b3 }
+.cover .grid10 { display: grid; grid-template-columns: repeat(10, 1fr); gap: 10px }
+.cover .chip10 { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.08) }
+.cover .chip10 .sw { height: 92px; display: grid; grid-template-rows: 2fr 1fr 1fr }
+.cover .chip10 b { display: block; padding: 8px 10px 2px; font-size: 13px }
+.cover .chip10 span { display: block; padding: 0 10px 10px; font-size: 10.5px; color: #a89d8c }
+
+/* ── страница варианта ── */
+.vhead { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 12mm; align-items: start }
+.vnum { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; opacity: .6 }
+.vname { font-size: 54px; line-height: 1; margin: 6px 0 10px }
+.vtag { font-size: 15px; line-height: 1.55; opacity: .85; max-width: 560px }
+.block h4 { margin: 0 0 8px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .6; font-family: 'Manrope', sans-serif; font-weight: 700 }
+.pal { display: flex; gap: 8px; flex-wrap: wrap }
+.pal div { width: 74px }
+.pal i { display: block; height: 46px; border-radius: 12px; border: 1px solid rgba(128,128,128,.25) }
+.pal small { display: block; font-size: 10px; margin-top: 4px; opacity: .75; font-family: 'Manrope', sans-serif; line-height: 1.3 }
+.fonts { display: flex; gap: 18px; align-items: baseline; margin-top: 14px }
+.fonts .aa { font-size: 40px; line-height: 1 }
+.fonts small { display: block; font-size: 11px; opacity: .7; font-family: 'Manrope', sans-serif }
+.why { font-size: 13px; line-height: 1.55; margin: 0; padding-left: 16px }
+.why li { margin-bottom: 4px }
+.phones { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9mm; flex: 1; min-height: 0 }
+.page.dk .ph { box-shadow: 0 0 0 1.5px rgba(255,255,255,.14), 0 30px 60px -28px rgba(0,0,0,.6) }
+.cap { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .65; margin-top: 8px; font-family: 'Manrope', sans-serif }
+
+/* ── телефон ── */
+.ph { width: 100%; aspect-ratio: 9 / 18.6; border-radius: 42px; padding: 8px; background: #0e0e0e; box-shadow: 0 30px 60px -28px rgba(0,0,0,.45) }
+.scr { height: 100%; border-radius: 35px; overflow: hidden; position: relative; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 11.5px; line-height: 1.35 }
+.notch { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 78px; height: 20px; border-radius: 20px; background: #0e0e0e; z-index: 3 }
+.status { display: flex; justify-content: space-between; padding: 10px 20px 4px; font-size: 10px; font-weight: 700; position: relative; z-index: 2 }
+.body { padding: 6px 14px 8px; display: grid; gap: 8px; grid-auto-rows: max-content; align-content: start; height: calc(100% - 92px); overflow: hidden }
+.dsp { font-family: var(--display); font-weight: var(--dw); letter-spacing: var(--dls); text-transform: var(--dtt) }
+.mut { color: var(--muted) }
+.card { background: var(--card); border: var(--cardBorder); border-radius: var(--r); padding: 10px; box-shadow: var(--shadow); backdrop-filter: var(--blur) }
+.hero { background: var(--hero); color: var(--onHero); border-radius: var(--r); padding: 12px; position: relative; overflow: hidden }
+.btn { display: block; text-align: center; background: var(--accent); color: var(--onAccent); border-radius: var(--btnr); padding: 9px; font-weight: 700; font-size: 11px }
+.btn.alt { background: var(--accent2); color: var(--onAccent2) }
+.chip { display: inline-block; padding: 3px 8px; border-radius: 99px; background: var(--soft); color: var(--muted); font-weight: 700; font-size: 9px; margin: 0 3px 3px 0 }
+.chip.ok { background: var(--okSoft); color: var(--ok) }
+.chip.on { background: var(--accent); color: var(--onAccent) }
+.row { display: flex; align-items: center; gap: 8px }
+.av { width: 32px; height: 32px; border-radius: 50%; background: var(--accent2); color: var(--onAccent2); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11px; flex-shrink: 0 }
+.lg { width: 32px; height: 32px; border-radius: calc(var(--r) * .6); background: var(--hero); color: var(--onHero); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; flex-shrink: 0 }
+.bar { height: 4px; border-radius: 4px; background: var(--soft); overflow: hidden; margin-top: 3px }
+.bar i { display: block; height: 100%; background: var(--accent2) }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px }
+.tab { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(5, 1fr); background: var(--nav); border-top: var(--cardBorder); padding: 8px 0 14px; font-size: 8.5px; font-weight: 700; color: var(--muted); text-align: center; backdrop-filter: var(--blur) }
+.tab span.on { color: var(--ink) }
+.tab b { display: block; width: 17px; height: 17px; margin: 0 auto 3px; border-radius: 6px; border: 1.7px solid currentColor }
+.tab span.on b { background: var(--accent); border-color: var(--accent) }
+.ringtxt { font-family: var(--body); font-weight: 800 }
+
+/* ── финальная страница ── */
+table.cmp { width: 100%; border-collapse: collapse; font-size: 13.5px }
+table.cmp th, table.cmp td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #d9d2c6; vertical-align: top }
+table.cmp th { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #7d7366 }
+.dots i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #c9a86a; margin-right: 3px }
+.dots i.o { background: #d9d2c6 }
+</style>
+</head>
+<body>
+<div id="doc"></div>
+<script>
+// 10 направлений. Все шрифты поддерживают кириллицу.
+const V = [
+ { id:'ivory', name:'Ivory & Bronze', ru:'Слоновая кость и бронза', mood:'Тихая роскошь — как кожаный ежедневник руководителя',
+   tag:'Тёплый бежевый, бронзовые акценты и строгий антиквенный заголовок. Текущий дизайн приложения: спокойно, дорого, не кричит. Работает и для молодых кандидатов, и для владельцев бизнеса.',
+   fonts:['Playfair Display','Manrope'], pal:[['#F4EEE5','Фон'],['#FFFCF7','Карточки'],['#2A241F','Кнопки'],['#B08D57','Бронза'],['#8A6A4D','Акцент']],
+   t:{bg:'#F4EEE5',card:'#FFFCF7',ink:'#1E1A16',muted:'#8B7F71',soft:'#EFE6D9',accent:'#2A241F',onAccent:'#FAF5EC',accent2:'#B08D57',onAccent2:'#fff',hero:'linear-gradient(140deg,#2A241F,#4a3c30)',onHero:'#F6EFE4',nav:'#FFFCF7',r:'20px',btnr:'14px',cardBorder:'1px solid #E5D9C8',shadow:'0 8px 20px -16px rgba(60,40,20,.4)',blur:'none',display:"'Playfair Display',serif",dw:600,dls:'-0.01em',dtt:'none',body:"'Manrope',sans-serif",ok:'#3F7D5A',okSoft:'#E3EFE6'},
+   why:['Кандидатам: ощущение «серьёзной компании», куда хочется попасть','Бизнесу: выглядит как премиальный консалтинг','Легко читается, не устаёт глаз'], cand:4, biz:5, lux:4 },
+ { id:'obsidian', name:'Obsidian Gold', ru:'Обсидиан и золото', mood:'Закрытый клуб: чёрный бархат, золотая фурнитура',
+   tag:'Тёмный по умолчанию. Золото только на главном: кнопка, Match %, прогресс. Высокий контраст и узкий антиквенный шрифт — максимальный «дорогой» эффект, особенно ночью.',
+   fonts:['Cormorant Garamond','Jost'], pal:[['#0B0A08','Фон'],['#16130F','Карточки'],['#D4AD5A','Золото'],['#F4EAD2','Текст'],['#2F291D','Линии']],
+   t:{bg:'#0B0A08',card:'#16130F',ink:'#F4EAD2',muted:'#A69A7B',soft:'#221d14',accent:'#D4AD5A',onAccent:'#120F08',accent2:'#E1BD6C',onAccent2:'#120F08',hero:'radial-gradient(120% 90% at 100% 0%,#5a4520 0%,#1a160e 55%)',onHero:'#F4E4BD',nav:'#120f0b',r:'18px',btnr:'99px',cardBorder:'1px solid #2F291D',shadow:'none',blur:'none',display:"'Cormorant Garamond',serif",dw:700,dls:'0',dtt:'none',body:"'Jost',sans-serif",ok:'#86C39C',okSoft:'#1A2820'},
+   why:['Бизнесу: статус и эксклюзивность, хочется платить за VIP','Кандидатам: «элитная» карьера, мотивирует','Минус: днём на солнце хуже читается'], cand:3, biz:5, lux:5 },
+ { id:'aluminium', name:'Aluminium', ru:'Алюминий — в духе Джони Айва', mood:'Материал, свет и ничего лишнего',
+   tag:'Подход Apple: светлый «алюминиевый» фон, белые карточки с мягкой тенью, один синий акцент, крупная гротескная типографика. Ничего не украшает — всё работает. Самый понятный и «технологичный».',
+   fonts:['Inter Tight','Inter Tight'], pal:[['#F5F5F7','Фон'],['#FFFFFF','Карточки'],['#1D1D1F','Текст'],['#0071E3','Синий акцент'],['#86868B','Вторичный']],
+   t:{bg:'#F5F5F7',card:'#FFFFFF',ink:'#1D1D1F',muted:'#86868B',soft:'#EDEDF0',accent:'#0071E3',onAccent:'#fff',accent2:'#1D1D1F',onAccent2:'#fff',hero:'linear-gradient(160deg,#ffffff,#e8e8ed)',onHero:'#1D1D1F',nav:'rgba(255,255,255,.97)',r:'22px',btnr:'99px',cardBorder:'none',shadow:'0 6px 24px -10px rgba(0,0,0,.18)',blur:'blur(10px)',display:"'Inter Tight',sans-serif",dw:700,dls:'-0.03em',dtt:'none',body:"'Inter Tight',sans-serif",ok:'#248A3D',okSoft:'#E5F5E9'},
+   why:['Кандидатам 16–30: знакомый «айфонный» язык, интуитивно','Бизнесу: ощущение надёжного современного продукта','Самый простой в разработке и масштабировании'], cand:5, biz:4, lux:4 },
+ { id:'royal', name:'Royal Navy', ru:'Королевский синий', mood:'Частный банк: доверие, порядок, капитал',
+   tag:'Глубокий тёмно-синий, белые карточки и шампанское-золото в деталях. Язык банков и консалтинга — вызывает доверие у предпринимателей, которые платят за вакансии и базу резюме.',
+   fonts:['Prata','Golos Text'], pal:[['#F2F5FA','Фон'],['#0D2150','Синий'],['#FFFFFF','Карточки'],['#C2A063','Шампань'],['#6B7A93','Вторичный']],
+   t:{bg:'#F2F5FA',card:'#FFFFFF',ink:'#0C1830',muted:'#6B7A93',soft:'#E8EEF7',accent:'#0D2150',onAccent:'#fff',accent2:'#C2A063',onAccent2:'#fff',hero:'linear-gradient(140deg,#0D2150,#1d3d82)',onHero:'#F1F5FF',nav:'#FFFFFF',r:'16px',btnr:'12px',cardBorder:'1px solid #DBE3EF',shadow:'0 8px 22px -18px rgba(13,33,80,.5)',blur:'none',display:"'Prata',serif",dw:400,dls:'0',dtt:'none',body:"'Golos Text',sans-serif",ok:'#2F7A5A',okSoft:'#E1F0E9'},
+   why:['Бизнесу: максимум доверия — «здесь безопасно платить»','Кандидатам: солидно, как работа в крупной компании','Хорош для корпоративных клиентов (white-label)'], cand:4, biz:5, lux:4 },
+ { id:'emerald', name:'Emerald Reserve', ru:'Изумрудный резерв', mood:'Старые деньги: изумруд, латунь, кремовая бумага',
+   tag:'Тёмно-зелёный — цвет роста и денег, плюс латунь и кремовый фон. Отсылает к частным клубам и дорогим часам. Хорошо ложится на идею «расти в карьере».',
+   fonts:['Spectral','Commissioner'], pal:[['#F3EFE4','Фон'],['#0F3B2E','Изумруд'],['#B8975A','Латунь'],['#FFFDF8','Карточки'],['#5E6B60','Вторичный']],
+   t:{bg:'#F3EFE4',card:'#FFFDF8',ink:'#14231D',muted:'#5E6B60',soft:'#E7E3D4',accent:'#0F3B2E',onAccent:'#F3EFE4',accent2:'#B8975A',onAccent2:'#fff',hero:'linear-gradient(150deg,#0F3B2E,#1f5a46)',onHero:'#F3EFE4',nav:'#FFFDF8',r:'14px',btnr:'10px',cardBorder:'1px solid #DDD6C2',shadow:'none',blur:'none',display:"'Spectral',serif",dw:600,dls:'-0.01em',dtt:'none',body:"'Commissioner',sans-serif",ok:'#0F6B4A',okSoft:'#DCEEE4'},
+   why:['Зелёный = рост и деньги: и карьера, и бизнес','Отличается от синих HR-сервисов (hh, LinkedIn)','Спокойно читается долгими сессиями в Academy'], cand:4, biz:5, lux:5 },
+ { id:'steppe', name:'Dala / Steppe', ru:'Дала — казахская степь', mood:'Местный характер: песок, терракота, закатное небо',
+   tag:'Тёплые цвета степи и современный широкий гротеск. Узнаваемо казахстанский, но без этно-орнаментов. Для бренда, который хочет быть «своим» для молодёжи и МСБ Казахстана.',
+   fonts:['Unbounded','Onest'], pal:[['#F6EEE3','Песок'],['#C1502E','Терракота'],['#2B1E1A','Земля'],['#E9B872','Закат'],['#FFFFFF','Карточки']],
+   t:{bg:'#F6EEE3',card:'#FFFFFF',ink:'#2B1E1A',muted:'#8C7462',soft:'#F0E2D2',accent:'#C1502E',onAccent:'#fff',accent2:'#2B1E1A',onAccent2:'#F6EEE3',hero:'linear-gradient(160deg,#E9B872 0%,#C1502E 70%)',onHero:'#fff',nav:'#FFFFFF',r:'24px',btnr:'24px',cardBorder:'none',shadow:'0 10px 24px -18px rgba(120,60,30,.55)',blur:'none',display:"'Unbounded',sans-serif",dw:600,dls:'-0.02em',dtt:'none',body:"'Onest',sans-serif",ok:'#3F7D5A',okSoft:'#E4F0E5'},
+   why:['Кандидатам: энергично, молодо, «наше»','Бизнесу: тёплый и человечный HR-бренд','Минус: меньше «люкса», больше характера'], cand:5, biz:3, lux:3 },
+ { id:'aurora', name:'Aurora Night', ru:'Северное сияние', mood:'Ночной tech: глубокий индиго и свечение',
+   tag:'Тёмный интерфейс с мягким фиолетово-бирюзовым свечением, как у AI-продуктов. Подчёркивает главное отличие платформы — AI-подбор и AI-тесты. Нравится поколению Z.',
+   fonts:['Geologica','Geologica'], pal:[['#0B0C1F','Фон'],['#161838','Карточки'],['#8B7CFF','Фиолет'],['#38E1C6','Бирюза'],['#ECEBFF','Текст']],
+   t:{bg:'#0B0C1F',card:'#151735',ink:'#ECEBFF',muted:'#8F92B8',soft:'#1F2247',accent:'linear-gradient(120deg,#8B7CFF,#38E1C6)',onAccent:'#0B0C1F',accent2:'#38E1C6',onAccent2:'#0B0C1F',hero:'radial-gradient(120% 100% at 0% 0%,#4b3fc4 0%,#151735 55%),#151735',onHero:'#fff',nav:'#10122b',r:'20px',btnr:'99px',cardBorder:'1px solid #262a58',shadow:'0 0 30px -14px rgba(139,124,255,.6)',blur:'none',display:"'Geologica',sans-serif",dw:700,dls:'-0.02em',dtt:'none',body:"'Geologica',sans-serif",ok:'#38E1C6',okSoft:'#123534'},
+   why:['Кандидатам 16–25: «вау», выглядит как будущее','Подчёркивает AI — главное преимущество перед hh','Бизнесу старше 35 может показаться слишком «игровым»'], cand:5, biz:3, lux:4 },
+ { id:'pearl', name:'Pearl Rose', ru:'Жемчуг и пудра', mood:'Мягкая роскошь: жемчуг, пудровая роза, слива',
+   tag:'Нежный, но не «девичий»: жемчужный фон, пудровые акценты и глубокий сливовый цвет кнопок. Большинство ассистентов — девушки, а основательница — женщина-предприниматель. Тёплый, заботливый HR-бренд.',
+   fonts:['Cormorant','Nunito Sans'], pal:[['#FAF5F2','Жемчуг'],['#E8C9C1','Пудра'],['#4A2337','Слива'],['#B98A6E','Розовое золото'],['#FFFFFF','Карточки']],
+   t:{bg:'#FAF5F2',card:'#FFFFFF',ink:'#2E1A24',muted:'#8E7580',soft:'#F3E6E2',accent:'#4A2337',onAccent:'#FAF5F2',accent2:'#B98A6E',onAccent2:'#fff',hero:'linear-gradient(150deg,#E8C9C1,#d5aeb0 60%,#b98a9a)',onHero:'#2E1A24',nav:'#FFFFFF',r:'26px',btnr:'99px',cardBorder:'1px solid #F0E1DC',shadow:'0 10px 26px -20px rgba(74,35,55,.45)',blur:'none',display:"'Cormorant',serif",dw:700,dls:'0',dtt:'none',body:"'Nunito Sans',sans-serif",ok:'#4F8A6B',okSoft:'#E5F1EA'},
+   why:['Кандидаткам: близко, вдохновляет, «про меня»','Бизнесу: заботливый сервис подбора','Минус: мужской аудитории может быть «слишком мягко»'], cand:5, biz:3, lux:4 },
+ { id:'graphite', name:'Graphite Citron', ru:'Графит и цитрон', mood:'Спорткар: графит, точность, один яркий сигнал',
+   tag:'Тёмный графит, узкие заглавные заголовки и цитрусовый акцент только на действиях (Откликнуться, Match). Динамично и мужественно, как приложение для бега или трейдинга.',
+   fonts:['Oswald','Rubik'], pal:[['#16181B','Графит'],['#22252A','Карточки'],['#D7F25C','Цитрон'],['#F2F3F0','Текст'],['#7C8188','Сталь']],
+   t:{bg:'#16181B',card:'#22252A',ink:'#F2F3F0',muted:'#8C9198',soft:'#2C3036',accent:'#D7F25C',onAccent:'#16181B',accent2:'#F2F3F0',onAccent2:'#16181B',hero:'linear-gradient(140deg,#2c3036,#1b1d21)',onHero:'#F2F3F0',nav:'#1b1d21',r:'10px',btnr:'8px',cardBorder:'1px solid #30343a',shadow:'none',blur:'none',display:"'Oswald',sans-serif",dw:600,dls:'0.02em',dtt:'uppercase',body:"'Rubik',sans-serif",ok:'#D7F25C',okSoft:'#2f3a17'},
+   why:['Продажникам и предпринимателям: драйв, «результат в цифрах»','Кандидатам: дерзко и современно','Минус: не выглядит «люксом»'], cand:4, biz:4, lux:3 },
+ { id:'glass', name:'Glass Sky', ru:'Стекло и небо', mood:'Свет, воздух, матовое стекло — как visionOS',
+   tag:'Небесный градиент и полупрозрачные «стеклянные» карточки. Лёгкий, оптимистичный, современный — ощущение нового старта карьеры. Вдохновлено интерфейсами Apple Vision Pro.',
+   fonts:['Tenor Sans','Inter'], pal:[['#DCE8FF','Небо'],['#F7E9F2','Рассвет'],['rgba(255,255,255,.6)','Стекло'],['#1B2A4A','Текст'],['#5B7CFA','Акцент']],
+   t:{bg:'linear-gradient(170deg,#dce8ff 0%,#eef1ff 45%,#f7e9f2 100%)',card:'rgba(255,255,255,.62)',ink:'#1B2A4A',muted:'#6A7896',soft:'rgba(255,255,255,.7)',accent:'#1B2A4A',onAccent:'#fff',accent2:'#5B7CFA',onAccent2:'#fff',hero:'linear-gradient(140deg,rgba(91,124,250,.95),rgba(160,120,230,.9))',onHero:'#fff',nav:'rgba(255,255,255,.95)',r:'24px',btnr:'99px',cardBorder:'1px solid rgba(255,255,255,.9)',shadow:'0 10px 30px -18px rgba(27,42,74,.35)',blur:'blur(14px)',display:"'Tenor Sans',sans-serif",dw:400,dls:'0',dtt:'none',body:"'Inter',sans-serif",ok:'#2E8B6A',okSoft:'rgba(220,245,234,.9)'},
+   why:['Кандидатам: светло, дружелюбно, «новый старт»','Бизнесу: современно и технологично','Минус: стекло сложнее в разработке и тяжелее для слабых телефонов'], cand:5, biz:4, lux:4 },
+]
+
+const tabsC = ['Главная','Вакансии','Academy','Чаты','Профиль']
+const tabsE = ['Главная','Вакансии','Кандидаты','Чаты','Профиль']
+const tab = (list, i) => `<div class="tab">${list.map((t,k)=>`<span class="${k===i?'on':''}"><b></b>${t}</span>`).join('')}</div>`
+const ring = (p, size=48, label='') => { const r=size/2-5, c=2*Math.PI*r; return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" style="flex-shrink:0"><circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="var(--soft)" stroke-width="5"/><circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="var(--accent2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p/100)}" transform="rotate(-90 ${size/2} ${size/2})"/><text x="50%" y="${label?47:54}%" text-anchor="middle" font-size="${size*.24}" class="ringtxt" fill="currentColor">${p}%</text>${label?`<text x="50%" y="66%" text-anchor="middle" font-size="7" fill="currentColor" opacity=".6">${label}</text>`:''}</svg>` }
+
+const S = {
+ home: () => `<div class="body">
+   <div class="row"><div class="av">АС</div><div><div class="dsp" style="font-size:16px">Привет, Алина! 👋</div><div class="mut" style="font-size:9.5px">Продолжай развиваться</div></div></div>
+   <div class="card mut" style="padding:8px 11px">⌕ Поиск вакансий, навыков, курсов…</div>
+   <div class="card row">${ring(90,44)}<div><b>Профиль заполнен на 90%</b><div class="mut" style="font-size:9.5px">Добавьте фото →</div></div></div>
+   <div class="g3">${[['Вакансии','92% match'],['Обучение','Mini Boss 73%'],['Тесты','3 из 8']].map(([a,b])=>`<div class="card" style="padding:8px"><b style="font-size:10px">${a}</b><div style="font-size:9px;color:var(--ok);font-weight:700">${b}</div></div>`).join('')}</div>
+   <div class="hero"><div style="font-size:8.5px;letter-spacing:.2em;opacity:.75">ВАШ КАРЬЕРНЫЙ MATCH</div><div class="row" style="margin-top:6px">${ring(85,52,'match')}<div><div class="dsp" style="font-size:15px">Бизнес-ассистент</div><div style="font-size:9px;opacity:.8">AI: резюме, тесты, обучение</div></div></div><div class="btn alt" style="margin-top:9px">✦ AI Career Profile</div></div>
+   <div class="card"><div class="row"><div class="lg">V</div><div style="flex:1;min-width:0"><b>Бизнес-ассистент</b><div class="mut" style="font-size:9.5px">ТОО Vision Group</div></div><span class="chip ok">92%</span></div><div class="mut" style="font-size:9.5px;margin-top:6px">Алматы · Гибрид · 300–500 тыс ₸</div></div>
+ </div>${tab(tabsC,0)}`,
+ job: () => `<div class="body">
+   <div class="mut" style="font-size:10px">← Детали вакансии</div>
+   <div class="card"><div class="row"><div class="lg" style="width:40px;height:40px">V</div><div><span class="chip">Business Assistant</span><div class="dsp" style="font-size:17px;margin-top:2px">Бизнес-ассистент</div><div class="mut" style="font-size:9.5px">ТОО Vision Group</div></div></div>
+     <div class="g2" style="margin-top:9px;font-size:9.5px">${[['Город','Алматы'],['Зарплата','300–500 тыс ₸'],['Формат','Гибрид'],['Опыт','1–3 года']].map(([a,b])=>`<div><span class="mut">${a}</span><br><b>${b}</b></div>`).join('')}</div></div>
+   <div class="card"><div class="row" style="justify-content:space-between"><b class="dsp" style="font-size:14px">AI Match</b><b class="dsp" style="font-size:22px;color:var(--ok)">92%</b></div>
+     <div class="g3" style="font-size:8.5px;margin-top:4px">${[['Skills',95],['Опыт',90],['Зарплата',100],['Город',100],['Формат',100],['Личность',85]].map(([k,v])=>`<div><span class="mut">${k} ${v}%</span><div class="bar"><i style="width:${v}%"></i></div></div>`).join('')}</div>
+     <div style="font-size:9.5px;color:var(--ok);margin-top:7px">✓ Canva ✓ 2 года ✓ Алматы ✓ зарплата</div></div>
+   <div class="btn">Откликнуться</div>
+   <div class="card" style="font-size:10px"><b>Ключевые обязанности</b><div class="mut" style="margin-top:4px;line-height:1.5">• Организация встреч и поездок<br>• Ведение календаря CEO<br>• Работа с документами</div></div>
+   <div class="g2"><div class="card" style="text-align:center;padding:8px;font-weight:700;font-size:10px">♡ Сохранить</div><div class="card" style="text-align:center;padding:8px;font-weight:700;font-size:10px">✦ Письмо AI</div></div>
+ </div>${tab(tabsC,1)}`,
+ academy: () => `<div class="body">
+   <div><div class="dsp" style="font-size:20px">BOSS VISION</div><div style="letter-spacing:.32em;font-size:9.5px;color:var(--accent2);font-weight:800">ACADEMY</div></div>
+   <div><span class="chip on">Все курсы</span><span class="chip">Мой прогресс</span><span class="chip">Сертификаты</span></div>
+   <div class="hero" style="padding:14px"><div style="font-size:8.5px;opacity:.75;letter-spacing:.2em">MINI BOSS ACADEMY</div><div class="dsp" style="font-size:18px;margin-top:3px">Бизнес-ассистент</div><div style="font-size:9.5px;opacity:.8">10 модулей · 30 уроков · сертификат</div><div style="height:5px;background:rgba(255,255,255,.25);border-radius:5px;margin:10px 0 4px"><div style="width:73%;height:100%;background:var(--accent2);border-radius:5px"></div></div><div style="font-size:9.5px">73% · 7 / 10 модулей</div><div class="btn alt" style="margin-top:9px;width:60%">▶ Продолжить</div></div>
+   ${[['Основы профессии','завершён','done'],['Коммуникация','завершён','done'],['AI-инструменты','в процессе','prog'],['Финансы','закрыт','lock']].map(([t,s,c],i)=>`<div class="card row" style="padding:8px 10px"><span class="av" style="width:24px;height:24px;font-size:10px;${c==='done'?'background:var(--ok);color:#fff':c==='prog'?'':'background:var(--soft);color:var(--muted)'}">${c==='lock'?'🔒':i+1}</span><div style="flex:1"><b style="font-size:10.5px">${t}</b><div class="mut" style="font-size:9px">${s}</div></div></div>`).join('')}
+   <div class="card row" style="padding:9px 10px"><span style="font-size:18px">🏆</span><div><b style="font-size:10.5px">Сертификат BOSS VISION</b><div class="mut" style="font-size:9px">после 100% — сразу в профиле</div></div></div>
+ </div>${tab(tabsC,2)}`,
+ profile: () => `<div style="height:70px;background:var(--hero)"></div><div class="body" style="margin-top:-38px">
+   <div class="row" style="justify-content:space-between;align-items:flex-end"><div class="av" style="width:62px;height:62px;font-size:18px;border:3px solid var(--card)">АС</div>${ring(90,46)}</div>
+   <div><div class="dsp" style="font-size:18px">Алина Серикова</div><div class="mut" style="font-size:10px">Бизнес-ассистент · Алматы · 24 года</div></div>
+   <div><span class="chip on">MBTI · ENTJ</span><span class="chip ok">Mini Boss Certified</span><span class="chip">Открыта к предложениям</span></div>
+   <div class="hero" style="padding:12px"><div class="dsp" style="font-size:13px">✦ AI Career Profile</div>
+     <div class="g2" style="font-size:9px;margin-top:7px;line-height:1.5"><div><b style="opacity:.75;letter-spacing:.12em;font-size:8px">СИЛЬНЫЕ</b><br>✓ Стратегия<br>✓ Организация<br>✓ Дисциплина</div><div><b style="opacity:.75;letter-spacing:.12em;font-size:8px">ЗОНЫ РОСТА</b><br>→ Делегирование<br>→ CRM<br>→ Английский</div></div></div>
+   <div class="card" style="font-size:9.5px"><b>Карьерный план</b><div class="mut" style="margin-top:4px;line-height:1.5">0–3 мес — сертификат Mini Boss<br>3–12 мес — первая работа, портфолио<br>1–3 года — операционный менеджер</div></div>
+   <div class="card" style="padding:4px 10px;font-size:10.5px;font-weight:700;line-height:2.1">Моё резюме<br>Мои отклики · 2<br>Сертификаты · 1</div>
+ </div>${tab(tabsC,4)}`,
+ employer: () => `<div class="body">
+   <div class="row"><div class="av">АН</div><div><div class="dsp" style="font-size:15px">Добро пожаловать, Айгерим!</div><div class="mut" style="font-size:9.5px">ТОО Vision Group</div></div></div>
+   <div class="btn">＋ Создать вакансию</div>
+   <div class="g3">${['AI-подбор','База резюме','Мои вакансии','Отклики','Под ключ','Подписка'].map(a=>`<div class="card" style="padding:9px 4px;text-align:center;font-size:9px;font-weight:700"><div style="width:18px;height:18px;border-radius:6px;border:1.7px solid var(--accent2);margin:0 auto 4px"></div>${a}</div>`).join('')}</div>
+   <div class="g3">${[['12','Отклики','+20%'],['4','Интервью',''],['2','Нанято','']].map(([n,l,h])=>`<div class="card" style="padding:9px"><div class="dsp" style="font-size:22px">${n}</div><div class="mut" style="font-size:9px">${l}</div>${h?`<div style="font-size:8.5px;color:var(--ok);font-weight:700">${h}</div>`:''}</div>`).join('')}</div>
+   <div class="dsp" style="font-size:12.5px">Рекомендуемые кандидаты</div>
+   ${[['АК','Арина К.','94'],['МК','Мадина К.','88']].map(([a,n,s],i)=>`<div class="card"><div class="row"><div class="av">${a}</div><div style="flex:1"><b>${n}</b><div class="mut" style="font-size:9px">Бизнес-ассистент · MBTI ${i?'ISFJ':'ENTJ'}</div></div><b class="dsp" style="font-size:17px;color:var(--ok)">${s}%</b></div>${i?'':'<div style="font-size:9px;color:var(--ok);margin-top:5px">✓ Canva ✓ 2 года ✓ Алматы</div><div class="mut" style="font-size:9px">⚠ мало опыта в CRM</div>'}</div>`).join('')}
+ </div>${tab(tabsE,0)}`,
+}
+const SCREENS = [['home','Главная'],['job','Вакансия'],['academy','Academy'],['profile','Профиль кандидата'],['employer','Кабинет предпринимателя']]
+
+const vars = (t) => Object.entries(t).map(([k,v])=>`--${k}:${v}`).join(';')
+const dots = (n) => '<span class="dots">'+[1,2,3,4,5].map(i=>`<i class="${i<=n?'':'o'}"></i>`).join('')+'</span>'
+const isDark = (v) => ['obsidian','aurora','graphite'].includes(v.id)
+
+let html = `<section class="page cover">
+  <div><div class="kicker">Дизайн-концепции · октябрь 2026</div><h1 style="margin-top:22px">Boss Vision<br><span style="color:#c9a86a">10 вариантов</span><br>дизайна</h1></div>
+  <p>Десять направлений для приложения BOSS VISION. В каждом — своя палитра, шрифты и форма элементов, и пять ключевых экранов: главная, вакансия, Academy, профиль кандидата и кабинет предпринимателя. Учтены обе аудитории: молодые кандидаты 16–30 лет и владельцы малого и среднего бизнеса.</p>
+  <div class="grid10">${V.map((v,i)=>`<div class="chip10"><div class="sw">${v.pal.slice(0,3).map(p=>`<div style="background:${p[0]}"></div>`).join('')}</div><b>${i+1}. ${v.name}</b><span>${v.ru}</span></div>`).join('')}</div>
+</section>`
+
+V.forEach((v,i)=>{
+  const dark = isDark(v)
+  const pageBg = dark ? '#121212' : '#EFECE7'
+  const pageInk = dark ? '#F1EDE6' : '#1C1A17'
+  html += `<section class="page${dark?' dk':''}" style="background:${pageBg};color:${pageInk};${vars(v.t)}">
+    <div class="vhead">
+      <div><div class="vnum">Вариант ${String(i+1).padStart(2,'0')} из 10 · ${v.mood}</div><div class="vname" style="font-family:${v.t.display};font-weight:${v.t.dw};letter-spacing:${v.t.dls};text-transform:${v.t.dtt}">${v.name}</div><div class="vtag">${v.tag}</div></div>
+      <div class="block"><h4>Палитра</h4><div class="pal">${v.pal.map(([c,l])=>`<div><i style="background:${c}"></i><small>${l}<br>${c.startsWith('#')?c.toUpperCase():''}</small></div>`).join('')}</div>
+        <div class="fonts"><div><div class="aa" style="font-family:${v.t.display};font-weight:${v.t.dw}">Аа</div><small>${v.fonts[0]} — заголовки</small></div><div><div class="aa" style="font-family:${v.t.body};font-weight:500">Аа</div><small>${v.fonts[1]} — текст</small></div></div></div>
+      <div class="block"><h4>Почему подходит</h4><ul class="why">${v.why.map(w=>`<li>${w}</li>`).join('')}</ul>
+        <div style="margin-top:10px;font-size:12px;line-height:1.9">Кандидатам ${dots(v.cand)}<br>Предпринимателям ${dots(v.biz)}<br>Ощущение «дорого» ${dots(v.lux)}</div></div>
+    </div>
+    <div class="phones">${SCREENS.map(([k,l])=>`<div><div class="ph"><div class="scr"><div class="notch"></div><div class="status"><span>9:41</span><span>●●● ▮</span></div>${S[k]()}</div></div><div class="cap">${l}</div></div>`).join('')}</div>
+  </section>`
+})
+
+const ranked = [...V].map((v,i)=>({v,i,score:v.cand+v.biz+v.lux})).sort((a,b)=>b.score-a.score)
+html += `<section class="page" style="background:#F6F3EE">
+  <div><div class="vnum">Сравнение</div><div class="vname" style="font-family:'Playfair Display',serif;font-weight:600">Как выбрать</div><div class="vtag">Оценки — наш взгляд дизайнера с учётом двух аудиторий. Любой вариант уже ложится на систему тем приложения: меняются цвета, шрифты и форма, экраны и логика остаются.</div></div>
+  <table class="cmp"><thead><tr><th>#</th><th>Вариант</th><th>Настроение</th><th>Кандидатам</th><th>Предпринимателям</th><th>«Дорого»</th><th>Шрифты</th></tr></thead><tbody>
+  ${V.map((v,i)=>`<tr><td>${i+1}</td><td><b>${v.name}</b><br><span style="color:#7d7366">${v.ru}</span></td><td>${v.mood}</td><td>${dots(v.cand)}</td><td>${dots(v.biz)}</td><td>${dots(v.lux)}</td><td>${v.fonts[0]} + ${v.fonts[1]}</td></tr>`).join('')}
+  </tbody></table>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10mm;font-size:14px;line-height:1.55">
+    <div><b style="font-size:16px">Рекомендация 1 — ${ranked[0].v.name}</b><br>Лучший баланс «дорого» и доверия для обеих аудиторий.</div>
+    <div><b style="font-size:16px">Рекомендация 2 — Aluminium</b><br>Самый понятный и масштабируемый — язык Apple, привычный молодёжи.</div>
+    <div><b style="font-size:16px">Идея</b><br>Можно совместить: днём светлый вариант (например, Aluminium или Ivory), ночью — Obsidian Gold. Режим «Авто» в приложении уже есть.</div>
+  </div>
+</section>`
+
+document.getElementById('doc').innerHTML = html
+document.fonts.ready.then(() => document.body.setAttribute('data-ready', '1'))
+</script>
+</body>
+</html>
