@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:pages": "GH_PAGES=1 npm run build && cp dist/index.html dist/404.html && touch dist/.nojekyll && cd dist && rm -rf .git && git init -q -b gh-pages && git add -A && git commit -q -m deploy && git push -q -f https://github.com/bossvisionapp/boss-vision.git gh-pages && rm -rf .git"
   },
   "dependencies": {
     "lucide-react": "^1.52.0",

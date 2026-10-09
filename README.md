@@ -91,3 +91,8 @@ src/
 3. Настоящий AI (Claude) в `lib/ai.ts` и `lib/match.ts` — интерфейсы готовы.
 4. Push / Email / WhatsApp-уведомления, видеохостинг уроков (Kinescope).
 5. App Store / Google Play через Capacitor из этого же кода.
+
+## Сайт на GitHub Pages
+
+https://bossvisionapp.github.io/boss-vision/ — обновить после изменений: `npm run deploy:pages`
+(собирает в подпапку `/boss-vision/` и отправляет в ветку `gh-pages`).
