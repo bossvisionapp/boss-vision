@@ -1,0 +1,15 @@
+{
+  "name": "BOSS VISION",
+  "short_name": "BOSS VISION",
+  "description": "HR + Career + Education: вакансии, AI-подбор, AI-тесты, Academy",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0907",
+  "theme_color": "#0b0907",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
